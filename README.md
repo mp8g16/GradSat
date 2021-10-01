@@ -14,11 +14,12 @@ GradSat argues that conceptually, all current 3SAT solvers are conceptually simi
 
 Firstly, represent the values of True and False as  1 and 0.
 
- a b | a AND b | a x b | a NAND b | 1 - a x b
- 0 0 |    0    |   0   |     1    |     1
- 0 1 |    0    |   0   |     1    |     1
- 1 0 |    0    |   0   |     1    |     1
- 1 1 |    1    |   1   |     0    |     0
+ | a b | a AND b | a x b | a NAND b | 1 - a x b |
+ |-----|---------|-------|----------|-----------|
+ | 0 0 |    0    |   0   |     1    |     1     |
+ | 0 1 |    0    |   0   |     1    |     1     |
+ | 1 0 |    0    |   0   |     1    |     1     |
+ | 1 1 |    1    |   1   |     0    |     0     |
  
  
  By representing the NAND gate through addition and multiplication, as it is a universal logic gate, all logic gates may be represented through the composition of this polynomial.
