@@ -24,8 +24,8 @@ Firstly, represent the values of True and False as  1 and 0.
  
  By representing the NAND gate through addition and multiplication, as it is a universal logic gate, all logic gates may be represented through the composition of this polynomial.
  
- NOT a = a NAND a = 1-a^2 (or very reasonably just 1 - a)
- a OR b = (NOT a) NAND (NOT b) = 1 - (1-a^2)(1-b^2) (again, or just 1-(1-a)(1-b))
+ NOT a = a NAND a = 1-a^2 (or very reasonably just 1 - a) \
+ a OR b = (NOT a) NAND (NOT b) = 1 - (1-a^2)(1-b^2) (again, or just 1-(1-a)(1-b))\
  
  In this way, values of (a,b) such as (0.7, 0.2) may be checked, rather than being constrained to 1 and 0. The next stage of the algorithm is to notice that the logic gate representations provided are monotonic with respect to their inputs. Their partial derivatives are either >=0 or <=0. This means that when each input is constrained to the range [0,1] then the maxima and minima must occur when each input value is either 0 or 1, and those maxima and minimar are 1 and 0. Equally, the composite of monotonic functions must be monotonic. This means that any stationary point which exists within the range but not at the binary points must be a saddle point if there exists a valid input which outputs a 1. From this reasoning, gradient ascent may be applied to quickly find a maximal input if one exists, solving the 3SAT problem.
  
